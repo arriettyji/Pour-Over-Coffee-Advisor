@@ -1,0 +1,13 @@
+interface:
+  display_name: 手冲咖啡分析顾问
+  short_description: 研究具体咖啡与器材，诊断冲煮并生成可执行、可追溯的手冲方案
+  default_prompt: 使用 $pour-over-coffee-advisor 研究我提供的咖啡、器材、用水、配方、过程与感官反馈，并给出可执行、可追溯的手冲建议。
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  allow_implicit_invocation: true
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
