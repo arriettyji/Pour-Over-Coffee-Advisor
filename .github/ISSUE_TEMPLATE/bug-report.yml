@@ -1,0 +1,64 @@
+name: "问题报告 / Problem report"
+description: "报告事实错误、研究缺口、推理问题或不可执行的方案。"
+title: "[问题 / Problem] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你帮助定位问题。请只提供复现所需的信息，并移除私人档案、购买记录、完整冲煮数据库和其他无需公开的个人内容。
+
+        Thank you for helping identify a problem. Include only what is needed to reproduce it, and remove private profiles, purchase history, complete brew databases, and other unnecessary personal information.
+  - type: input
+    id: environment
+    attributes:
+      label: "模型与环境 / Model and environment"
+      description: "例如模型名称、平台，以及是否具备联网、图片或文件读取能力。"
+      placeholder: "ChatGPT / Claude / GLM / other; web and file access available or unavailable"
+    validations:
+      required: true
+  - type: dropdown
+    id: task_type
+    attributes:
+      label: "任务类型 / Task type"
+      options:
+        - "第一次冲煮 / First brew"
+        - "已有结果诊断 / Brew diagnosis"
+        - "器材或条件迁移 / Equipment or condition migration"
+        - "配方分析或比较 / Recipe analysis or comparison"
+        - "来源、解释或格式追问 / Source, rationale, or formatting follow-up"
+        - "其他 / Other"
+    validations:
+      required: true
+  - type: textarea
+    id: input
+    attributes:
+      label: "复现所需输入 / Minimum input needed to reproduce"
+      description: "请提供足以说明当前咖啡、器材、用水、粉量、配方、过程、感官反馈或目标的最小信息。"
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: "实际表现 / Actual behavior"
+      description: "说明回答做了什么，以及具体哪里不准确、缺乏依据、不可执行或受到上下文污染。"
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: "预期表现 / Expected behavior"
+      description: "说明你认为更合理的行为；如果不确定，也可以描述希望 Skill 重新考虑的范围。"
+    validations:
+      required: true
+  - type: textarea
+    id: brew_result
+    attributes:
+      label: "实际冲煮结果 / Actual brew result"
+      description: "如果已经执行方案，请提供过程、总时间和从热到冷的杯中表现；未执行可以留空。"
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: "提交确认 / Submission confirmation"
+      options:
+        - label: "我已移除无需公开的私人信息，并允许项目维护者将本反馈用于改进项目。 / I removed unnecessary private information and allow the maintainer to use this feedback to improve the project."
+          required: true

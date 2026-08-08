@@ -1,0 +1,62 @@
+name: "使用反馈 / Use feedback"
+description: "分享一次真实使用中表现良好、一般或不理想的结果。"
+title: "[反馈 / Feedback] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        正面与负面结果都很有价值。请只分享判断所需的信息，不要上传完整私人档案或冲煮数据库。
+
+        Positive and negative outcomes are equally useful. Share only what is needed for evaluation, not a complete private profile or brew database.
+  - type: input
+    id: environment
+    attributes:
+      label: "模型与环境 / Model and environment"
+      placeholder: "Model, platform, and available tools"
+    validations:
+      required: true
+  - type: dropdown
+    id: outcome
+    attributes:
+      label: "整体可用性 / Overall usability"
+      options:
+        - "可以直接执行且结果良好 / Executable with a strong result"
+        - "基本可用但需要追问或修改 / Usable after follow-up or revision"
+        - "方案能够执行但结果不理想 / Executable but produced a weak result"
+        - "无法可靠执行 / Not reliably executable"
+    validations:
+      required: true
+  - type: textarea
+    id: case
+    attributes:
+      label: "案例与请求 / Case and request"
+      description: "概括咖啡、样品状态、器材、滤纸、水、粉量、目标和你的原始请求。"
+    validations:
+      required: true
+  - type: textarea
+    id: recommendation
+    attributes:
+      label: "Skill 的建议 / Skill recommendation"
+      description: "粘贴必要摘要或说明关键路线，不必粘贴整段对话。"
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: "实际过程与杯中结果 / Actual process and cup result"
+      description: "包括明显的流动差异、总时间、操作问题和从热到冷的感官表现。"
+    validations:
+      required: true
+  - type: textarea
+    id: assessment
+    attributes:
+      label: "最有帮助与最需改进之处 / What helped and what needs improvement"
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: "提交确认 / Submission confirmation"
+      options:
+        - label: "我已移除无需公开的私人信息，并允许项目维护者将本反馈用于改进项目。 / I removed unnecessary private information and allow the maintainer to use this feedback to improve the project."
+          required: true

@@ -1,0 +1,44 @@
+name: "资料或功能建议 / Source or feature proposal"
+description: "建议新的研究资料、实践案例、器材研究、评测或功能方向。"
+title: "[建议 / Proposal] "
+body:
+  - type: dropdown
+    id: proposal_type
+    attributes:
+      label: "建议类型 / Proposal type"
+      options:
+        - "理论资料 / Theory source"
+        - "实践资料或案例 / Practice source or case"
+        - "器材或滤纸研究 / Equipment or filter research"
+        - "评测案例 / Evaluation case"
+        - "运行规则或功能 / Runtime rule or feature"
+        - "文档与使用体验 / Documentation or usability"
+        - "其他 / Other"
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: "具体建议 / Proposal"
+      description: "说明希望增加或改变什么，以及它解决哪个实际问题。"
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: "依据与来源 / Basis and sources"
+      description: "如有来源，请提供作者、题名、日期、链接和准确位置，并说明资料属于研究、实践观察、实践解释还是具体案例。"
+  - type: textarea
+    id: scope
+    attributes:
+      label: "适用范围与限制 / Scope and limitations"
+      description: "说明适用的咖啡、器材、用水、目标或模型环境，以及不应外推的范围。"
+  - type: checkboxes
+    id: rights
+    attributes:
+      label: "内容确认 / Content confirmation"
+      options:
+        - label: "我没有提交未经授权的原始电子书、论文附件、课程材料或大段受版权保护内容。 / I did not submit unauthorized books, paper attachments, course material, or substantial copyrighted content."
+          required: true
+        - label: "我已移除无需公开的私人信息，并允许项目维护者将本建议用于改进项目。 / I removed unnecessary private information and allow the maintainer to use this proposal to improve the project."
+          required: true
